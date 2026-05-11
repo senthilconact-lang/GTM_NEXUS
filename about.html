@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nexus Studio — About</title>
+
+  <!-- ✅ Replace GTM-XXXXXXX with your actual GTM Container ID -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F7F5F0; --surface: #FFFFFF; --ink: #1A1814; --muted: #6B6760;
+      --accent: #C8622A; --accent-light: #FAF0E8; --border: #E2DDD6; --nav-h: 64px;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); }
+
+    nav {
+      position: sticky; top: 0; z-index: 100; height: var(--nav-h);
+      background: rgba(247,245,240,0.92); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; padding: 0 6vw;
+    }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.35rem; color: var(--ink); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul a { text-decoration: none; font-size: 0.9rem; font-weight: 400; color: var(--muted); transition: color 0.2s; }
+    nav ul a:hover, nav ul a.active { color: var(--ink); }
+    nav ul a.active { font-weight: 500; }
+    .nav-cta {
+      background: var(--ink); color: #fff; border: none; cursor: pointer;
+      padding: 0.5rem 1.25rem; border-radius: 99px; font-size: 0.875rem;
+      font-family: 'DM Sans', sans-serif; font-weight: 500; text-decoration: none; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--accent); }
+
+    /* PAGE HEADER */
+    .page-header { padding: 6rem 6vw 4rem; border-bottom: 1px solid var(--border); }
+    .page-kicker { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .page-kicker::before { content: ''; width: 24px; height: 1.5px; background: var(--accent); display: block; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1.1; letter-spacing: -0.02em; max-width: 700px; }
+
+    /* MISSION */
+    .mission { padding: 5rem 6vw; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; border-bottom: 1px solid var(--border); }
+    @media (max-width: 700px) { .mission { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .mission-text h2 { font-family: 'DM Serif Display', serif; font-size: 2rem; margin-bottom: 1.25rem; line-height: 1.2; }
+    .mission-text p { color: var(--muted); line-height: 1.8; font-size: 0.975rem; margin-bottom: 1rem; font-weight: 300; }
+    .mission-graphic {
+      background: var(--ink); border-radius: 20px; aspect-ratio: 4/3;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif; font-size: 5rem;
+      color: var(--accent); letter-spacing: -0.05em;
+    }
+
+    /* VALUES */
+    .values { padding: 5rem 6vw; border-bottom: 1px solid var(--border); }
+    .section-label { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 3rem; }
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+    .value-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+    .value-icon { width: 40px; height: 40px; background: var(--accent-light); border-radius: 10px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+    .value-card h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; }
+    .value-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+
+    /* TEAM */
+    .team { padding: 5rem 6vw; border-bottom: 1px solid var(--border); }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .team-card { text-align: center; }
+    .avatar {
+      width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1rem;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #fff;
+    }
+    .team-name { font-weight: 500; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .team-role { font-size: 0.8rem; color: var(--muted); }
+
+    /* CTA */
+    .cta-section { padding: 6rem 6vw; text-align: center; }
+    .cta-section h2 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 1rem; }
+    .cta-section p { color: var(--muted); max-width: 440px; margin: 0 auto 2rem; line-height: 1.7; }
+    .btn-primary {
+      background: var(--ink); color: #fff; border: none; cursor: pointer;
+      padding: 0.85rem 2rem; border-radius: 99px; font-size: 0.95rem;
+      font-family: 'DM Sans', sans-serif; font-weight: 500; text-decoration: none; transition: background 0.2s; display: inline-block;
+    }
+    .btn-primary:hover { background: var(--accent); }
+
+    footer { border-top: 1px solid var(--border); padding: 1.75rem 6vw; display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: var(--muted); }
+    footer ul { list-style: none; display: flex; gap: 1.25rem; }
+  </style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<nav>
+  <a href="index.html" class="logo">Nexus<span>.</span></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Get in touch</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-kicker">About us</div>
+  <h1>A small studio with a big point of view.</h1>
+</div>
+
+<section class="mission">
+  <div class="mission-text">
+    <h2>We believe great work starts with understanding.</h2>
+    <p>Founded in 2018, Nexus started as a two-person operation with a simple belief: digital products should feel human. Today we're a team of 12, working with startups and established brands across the globe.</p>
+    <p>We embed ourselves in your problem space, ask the uncomfortable questions, and then build something that actually solves them — beautifully.</p>
+  </div>
+  <div class="mission-graphic">Nx</div>
+</section>
+
+<section class="values">
+  <p class="section-label">Our values</p>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-icon">✦</div>
+      <h3>Craft first</h3>
+      <p>We take time to do things properly. Shortcuts are a debt we never want to carry.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">◎</div>
+      <h3>Radical honesty</h3>
+      <p>We'll tell you when an idea won't work — and bring a better one to the table.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">◈</div>
+      <h3>Fewer, better</h3>
+      <p>We take on fewer projects so we can give each one our full attention.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">⟳</div>
+      <h3>Always learning</h3>
+      <p>Our industry moves fast. Curiosity isn't optional — it's in our job description.</p>
+    </div>
+  </div>
+</section>
+
+<section class="team">
+  <p class="section-label">The team</p>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="avatar" style="background:#C8622A;">AL</div>
+      <div class="team-name">Alex Liu</div>
+      <div class="team-role">Founder & Creative Director</div>
+    </div>
+    <div class="team-card">
+      <div class="avatar" style="background:#1A5276;">MR</div>
+      <div class="team-name">Maya Rao</div>
+      <div class="team-role">Head of Engineering</div>
+    </div>
+    <div class="team-card">
+      <div class="avatar" style="background:#1E8449;">JP</div>
+      <div class="team-name">James Park</div>
+      <div class="team-role">Lead Designer</div>
+    </div>
+    <div class="team-card">
+      <div class="avatar" style="background:#7D3C98;">SN</div>
+      <div class="team-name">Sofia Novak</div>
+      <div class="team-role">Analytics & GTM Specialist</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Let's build together.</h2>
+  <p>We're always open to interesting projects. Drop us a message and let's talk.</p>
+  <a href="contact.html" class="btn-primary">Contact us</a>
+</section>
+
+<footer>
+  <span>© 2026 Nexus Studio</span>
+  <ul>
+    <li><a href="index.html" style="color:inherit;text-decoration:none;">Home</a></li>
+    <li><a href="about.html" style="color:inherit;text-decoration:none;">About</a></li>
+    <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact</a></li>
+  </ul>
+</footer>
+</body>
+</html>
